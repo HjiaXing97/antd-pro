@@ -67,11 +67,11 @@ importers:
         specifier: ^5.3.1
         version: 5.3.2(@types/node@20.14.9)
 
-  demo:
+  apps/web:
     dependencies:
       '@antd-pro/components':
         specifier: workspace:^
-        version: link:../packages/components
+        version: link:../../packages/components
       react:
         specifier: ^18.3.1
         version: 18.3.1

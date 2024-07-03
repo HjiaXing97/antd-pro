@@ -1,5 +1,5 @@
-const BaseTable = ()=>{
-    return <div>table</div>
-}
+const BaseTable = () => {
+  return <div>table</div>;
+};
 
-export default BaseTable
+export default BaseTable;
