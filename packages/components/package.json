@@ -2,6 +2,14 @@
   "name": "@antd-pro/components",
   "private": true,
   "version": "0.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "exports": {
+    ".": {
+      "default": "./dist/index.js",
+      "import": "./dist/index.esm.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
