@@ -14,7 +14,7 @@ interface IRequestParams {
 }
 
 type RequestProps = (params: IRequestParams) => {
-  data: [];
+  data: any[];
   current?: number;
   total?: number;
 };
