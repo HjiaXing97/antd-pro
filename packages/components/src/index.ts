@@ -1,1 +1,3 @@
-export { default as BaseTable } from "./BaseTable";
+import BaseTable from "./BaseTable/index";
+
+export { BaseTable };
