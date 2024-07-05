@@ -1,13 +1,61 @@
-import { FC, useEffect } from "react";
-import type { BaseTableProps } from "./type";
+import { FC, useEffect, useState } from "react";
+import { Table } from "antd";
 
-const BaseTable: FC<BaseTableProps> = ({ request, data }) => {
+import type {
+  BaseTableProps,
+  IColumnTypes,
+  ISearchFormProps,
+  IControlsProps,
+} from "./type";
+import SearchForm from "./components/SearchForm";
+import ControlsList from "./components/ControlsList";
+import { TableStyle } from "./style";
+
+const BaseTable: FC<BaseTableProps> = ({
+  column: tableColumn,
+  data,
+  search,
+  request,
+  toolBar,
+}) => {
+  const [column, setColumn] = useState<IColumnTypes<any>[]>(tableColumn);
+  const [searchForm, setSearchForm] = useState<ISearchFormProps>(
+    search || {
+      searchText: "查询",
+      resetText: "重置",
+    },
+  );
+
+  const [tableToolBar, setTableToolBar] = useState<IControlsProps>(
+    toolBar || {
+      showCreate: true,
+      showExport: true,
+      showImport: true,
+    },
+  );
+
   useEffect(() => {
-    if (request) request({ pageSize: 10, current: 1 });
-    console.log(data);
+    const newColumn = tableColumn.filter((item) => !item.hideInTable);
+    setColumn(newColumn);
   }, []);
 
-  return <>111</>;
+  const handleSearch = (values: any) => {
+    request && request({ pageSize: 10, current: 1, ...values });
+  };
+
+  return (
+    <TableStyle>
+      <SearchForm
+        columns={column}
+        searchForm={searchForm}
+        handleSearch={handleSearch}
+      ></SearchForm>
+      {toolBar?.hideControls ? null : (
+        <ControlsList {...tableToolBar}></ControlsList>
+      )}
+      <Table columns={column} dataSource={data}></Table>
+    </TableStyle>
+  );
 };
 
 export default BaseTable;

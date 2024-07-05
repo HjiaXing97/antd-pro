@@ -1,3 +1,4 @@
-import BaseTable from "./BaseTable/index";
+import BaseTable from "./BaseTable";
+import type { BaseTableProps, IColumnTypes } from "./BaseTable/type";
 
-export { BaseTable };
+export { BaseTable, BaseTableProps, IColumnTypes };
