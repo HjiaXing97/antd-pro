@@ -27,6 +27,20 @@ type RequestProps = (params: IRequestParams) => {
   total?: number;
 };
 
+type ValueType =
+  | "select"
+  | "date"
+  | "dateRange"
+  | "textarea"
+  | "password"
+  | "radio"
+  | "checkbox"
+  | "upload"
+  | "money"
+  | "dict"
+  | string
+  | ((text: any, record: any, index: number) => React.ReactNode);
+
 /**
  * 表格列配置
  */
@@ -49,14 +63,19 @@ export interface IColumnTypes<RecordType> extends TableColumnType<RecordType> {
    * 是否在表单中隐藏
    */
   hideInForm?: boolean;
+
+  /**
+   * 组件类型
+   */
+  valueType?: ValueType;
 }
 
 /**
  * 搜索表单配置
  */
 export interface ISearchFormProps {
-  searchText?: "查询" | string;
-  resetText?: "重置" | string;
+  searchText?: string;
+  resetText?: string;
 }
 
 /**

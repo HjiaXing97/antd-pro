@@ -15,4 +15,17 @@ export const SubTitle = styled.div`
 export const RightToolBar = styled.div`
   display: flex;
   align-items: center;
+  .ant-btn {
+    margin-right: 16px;
+  }
+`;
+
+export const ToolBarIcon = styled.div`
+  display: flex;
+  align-items: center;
+  .anticon {
+    margin-right: 16px;
+    font-size: 20px;
+    cursor: pointer;
+  }
 `;

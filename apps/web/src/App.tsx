@@ -1,4 +1,5 @@
 import { BaseTable } from '@antd-pro/components';
+import { Button } from 'antd';
 
 const App = () => {
   const column = [
@@ -33,7 +34,17 @@ const App = () => {
   ];
   return (
     <div>
-      <BaseTable column={column} data={data} />
+      <BaseTable
+        column={column}
+        data={data}
+        toolBar={{
+          ControlsNode: (
+            <>
+              <Button>toolBar自定义按钮</Button>
+            </>
+          ),
+        }}
+      />
     </div>
   );
 };
