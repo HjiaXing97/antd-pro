@@ -1,4 +1,7 @@
 import BaseTable from "./BaseTable";
 import type { BaseTableProps, IColumnTypes } from "./BaseTable/type";
+import { VALUE_TYPE_ENUM } from "./BaseTable/static";
 
-export { BaseTable, BaseTableProps, IColumnTypes };
+import BaseSelect from "./BaseSelect";
+
+export { BaseTable, BaseTableProps, IColumnTypes, BaseSelect, VALUE_TYPE_ENUM };

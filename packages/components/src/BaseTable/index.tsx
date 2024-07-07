@@ -9,6 +9,7 @@ import type {
 } from "./type";
 import SearchForm from "./components/SearchForm";
 import ControlsList from "./components/ControlsList";
+import TableRender from "./components/TableRender";
 import { TableStyle } from "./style";
 
 import { DEFAULT_TOO_BAR, DEFAULT_SEARCH_FORM } from "./static";
@@ -42,9 +43,17 @@ const BaseTable: FC<BaseTableProps> = ({
         console.log(index, "index");
         console.log("================================");
 
-        if (v.render) {
-          return v.render(text, record, index);
-        }
+        if (v.render) return v.render(text, record, index);
+
+        if (v.valueType)
+          return (
+            <TableRender
+              text={text}
+              record={record}
+              index={index}
+              valueType={v.valueType}
+            />
+          );
         return text;
       },
     }));

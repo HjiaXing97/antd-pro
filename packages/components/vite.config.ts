@@ -12,6 +12,7 @@ export default defineConfig({
       insertTypesEntry: true,
     }),
   ],
+
   build: {
     lib: {
       entry: [resolve(__dirname, "src/index.ts")],

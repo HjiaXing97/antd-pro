@@ -27,7 +27,8 @@ type RequestProps = (params: IRequestParams) => {
   total?: number;
 };
 
-type ValueType =
+
+export type ValueType =
   | "select"
   | "date"
   | "dateRange"
@@ -38,7 +39,6 @@ type ValueType =
   | "upload"
   | "money"
   | "dict"
-  | string
   | ((text: any, record: any, index: number) => React.ReactNode);
 
 /**

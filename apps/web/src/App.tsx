@@ -1,4 +1,4 @@
-import { BaseTable } from '@antd-pro/components';
+import { BaseTable, VALUE_TYPE_ENUM } from '@antd-pro/components';
 import { Button } from 'antd';
 
 const App = () => {
@@ -7,11 +7,13 @@ const App = () => {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
+      valueType: VALUE_TYPE_ENUM.SELECT,
     },
     {
       title: 'Age',
       dataIndex: 'age',
       key: 'age',
+      valueType: VALUE_TYPE_ENUM.MONEY,
     },
   ];
 
