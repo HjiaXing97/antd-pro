@@ -8,6 +8,11 @@ const App = () => {
       dataIndex: 'name',
       key: 'name',
       valueType: VALUE_TYPE_ENUM.SELECT,
+      valueEnum: [
+        { label: 'John Brown', value: '1' },
+        { label: 'Jim Green', value: '2' },
+        { label: 'Joe Black', value: '3' },
+      ],
     },
     {
       title: 'Age',
@@ -19,21 +24,22 @@ const App = () => {
 
   const data = [
     {
-      name: 'John Brown',
+      name: '1',
       age: 32,
       key: 1,
     },
     {
-      name: 'Jim Green',
+      name: '1',
       age: 42,
       key: 2,
     },
     {
-      name: 'Joe Black',
+      name: '2',
       age: 32,
       key: 3,
     },
   ];
+
   return (
     <div>
       <BaseTable

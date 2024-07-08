@@ -27,7 +27,6 @@ type RequestProps = (params: IRequestParams) => {
   total?: number;
 };
 
-
 export type ValueType =
   | "select"
   | "date"
@@ -41,6 +40,12 @@ export type ValueType =
   | "dict"
   | ((text: any, record: any, index: number) => React.ReactNode);
 
+export interface IValueEnum {
+  label: string;
+  value: string;
+}
+
+export type ValueEnumType = (param: any) => IValueEnum[];
 /**
  * 表格列配置
  */
@@ -68,6 +73,11 @@ export interface IColumnTypes<RecordType> extends TableColumnType<RecordType> {
    * 组件类型
    */
   valueType?: ValueType;
+
+  /**
+   * 表格列枚举
+   */
+  valueEnum?: IValueEnum | ValueEnumType;
 }
 
 /**

@@ -12,12 +12,17 @@ import {
 import type { IControlsProps } from "../../type";
 import { ToolBarStyle, SubTitle, RightToolBar, ToolBarIcon } from "./style";
 
-const ControlsList: FC<IControlsProps> = ({
+interface IProps extends IControlsProps {
+  reload: (e: any) => void;
+}
+
+const ControlsList: FC<IProps> = ({
   showCreate,
   showExport,
   showImport,
   subTitle,
   ControlsNode,
+  reload,
 }) => {
   return (
     <ToolBarStyle>
@@ -33,7 +38,7 @@ const ControlsList: FC<IControlsProps> = ({
         {ControlsNode}
         <ToolBarIcon>
           <Tooltip title={"刷新"}>
-            <RedoOutlined />
+            <RedoOutlined onClick={reload} />
           </Tooltip>
           <Tooltip title={"密度"}>
             <LineHeightOutlined />
