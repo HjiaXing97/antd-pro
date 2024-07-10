@@ -1,19 +1,21 @@
 {
-  "name": "nb-ui-pro",
-  "version": "1.0.0",
+  "name": "nb-antd-pro",
   "description": "",
-  "main": "index.js",
-  "private": true,
+  "private": false,
   "workspaces": [
     "packages/*"
   ],
+  "files": [
+    "README.md"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:components": "pnpm -C packages/components run build",
     "lint": "eslint \"packages/**/*.{js,jsx,ts,tsx}\"",
     "format": "prettier --write \"packages/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "prepare": "husky install",
     "pre-commit": "lint-staged",
+    "publish-all": "npx changeset add && npx changeset version && pnpm  rebuild-and-publish",
+    "rebuild-and-publish": "pnpm recursive rebuild && pnpm recursive exec -- pnpm run build && pnpm publish -r --access public --no-git-checks",
     "commit": "git-cz",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
@@ -34,6 +36,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@changesets/cli": "^2.27.7",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@rollup/plugin-typescript": "^11.1.6",

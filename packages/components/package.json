@@ -1,7 +1,7 @@
 {
-  "name": "@nb-ui-pro/components",
+  "name": "@nb-antd-pro/components",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.2.3",
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -18,6 +18,9 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@ant-design/icons": "^5.3.7",
     "antd": "^5.19.0",
