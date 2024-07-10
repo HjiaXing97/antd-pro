@@ -1,4 +1,5 @@
 import type { TableColumnType } from "antd";
+import { ReactNode } from "react";
 
 /**
  * 表格请求数据参数
@@ -38,7 +39,7 @@ export type ValueType =
   | "upload"
   | "money"
   | "dict"
-  | ((text: any, record: any, index: number) => React.ReactNode);
+  | ((text: any, record: any, index: number) => ReactNode);
 
 export interface IValueEnum {
   label: string;
@@ -50,7 +51,7 @@ export type ValueEnumType = (param: any) => IValueEnum[];
  * 表格列配置
  */
 export interface IColumnTypes<RecordType> extends TableColumnType<RecordType> {
-  render?: (text: any, record: RecordType, index: number) => React.ReactNode;
+  render?: (text: any, record: RecordType, index: number) => ReactNode;
 
   title: string;
 
@@ -110,7 +111,7 @@ export interface IControlsProps {
   /**
    * 自定义操作区域
    */
-  ControlsNode?: React.ReactNode;
+  ControlsNode?: ReactNode;
 
   /**
    * 是否隐藏操作区域

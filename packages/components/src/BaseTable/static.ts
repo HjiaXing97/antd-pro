@@ -21,4 +21,5 @@ export enum VALUE_TYPE_ENUM {
   MONEY = "money",
   DICT = "dict",
 }
+
 export { DEFAULT_TOO_BAR, DEFAULT_SEARCH_FORM };

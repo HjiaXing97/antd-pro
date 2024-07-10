@@ -37,13 +37,13 @@ const ControlsList: FC<IProps> = ({
         {showImport ? <Button icon={<UploadOutlined />}>导入</Button> : null}
         {ControlsNode}
         <ToolBarIcon>
-          <Tooltip title={"刷新"}>
+          <Tooltip title="刷新">
             <RedoOutlined onClick={reload} />
           </Tooltip>
-          <Tooltip title={"密度"}>
+          <Tooltip title="密度">
             <LineHeightOutlined />
           </Tooltip>
-          <Tooltip title={"列设置"}>
+          <Tooltip title="列设置">
             <SettingOutlined />
           </Tooltip>
         </ToolBarIcon>

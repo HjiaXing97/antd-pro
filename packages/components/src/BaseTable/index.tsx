@@ -25,15 +25,16 @@ import { DEFAULT_TOO_BAR, DEFAULT_SEARCH_FORM } from "./static";
 const BaseTable: FC<BaseTableProps> = forwardRef(
   ({ column: tableColumn, data, search, request, toolBar }, ref) => {
     const [column, setColumn] = useState<IColumnTypes<any>[]>(tableColumn);
-    const [searchForm, setSearchForm] = useState<ISearchFormProps>({
+
+    const searchForm: ISearchFormProps = {
       ...DEFAULT_SEARCH_FORM,
       ...(search ?? {}),
-    });
+    };
 
-    const [tableToolBar, setTableToolBar] = useState<IControlsProps>({
+    const tableToolBar: IControlsProps = {
       ...DEFAULT_TOO_BAR,
       ...(toolBar ?? {}),
-    });
+    };
 
     const tableRef = useRef(null);
 
@@ -62,11 +63,11 @@ const BaseTable: FC<BaseTableProps> = forwardRef(
     }, []);
 
     const handleSearch = (values: any) => {
-      request && request({ pageSize: 10, current: 1, ...values });
+      if (request) request({ pageSize: 10, current: 1, ...values });
     };
 
     const reload = () => {
-      request && request({ pageSize: 10, current: 1 });
+      if (request) request({ pageSize: 10, current: 1 });
     };
 
     useImperativeHandle(ref, () => ({
@@ -79,11 +80,11 @@ const BaseTable: FC<BaseTableProps> = forwardRef(
           columns={column}
           searchForm={searchForm}
           handleSearch={handleSearch}
-        ></SearchForm>
+        />
         {toolBar?.hideControls ? null : (
-          <ControlsList {...tableToolBar} reload={reload}></ControlsList>
+          <ControlsList {...tableToolBar} reload={reload} />
         )}
-        <Table columns={column} dataSource={data} bordered></Table>
+        <Table columns={column} dataSource={data} bordered />
       </TableStyle>
     );
   },

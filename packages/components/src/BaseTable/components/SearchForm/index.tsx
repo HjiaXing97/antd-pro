@@ -17,7 +17,7 @@ const SearchForm: FC<IProps> = ({
 
   /** 查询方法 */
   const handleSearch = () => {
-    handleSearchProps && handleSearchProps(form.getFieldsValue());
+    if (handleSearchProps) handleSearchProps(form.getFieldsValue());
   };
 
   return (
