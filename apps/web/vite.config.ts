@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@antd-pro/components': path.resolve(
+      '@nb-ui-pro/components': path.resolve(
         __dirname,
         '../../packages/components/src'
       ),

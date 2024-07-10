@@ -1,4 +1,4 @@
-import { BaseTable, VALUE_TYPE_ENUM } from '@antd-pro/components';
+import { BaseTable, VALUE_TYPE_ENUM } from '@nb-ui-pro/components';
 import { Button } from 'antd';
 
 const App = () => {

@@ -23,9 +23,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "."
-    // "paths": {
-    //   "@antd-pro/components/*": ["../../packages/components"]
-    // }
+
   },
   "include": ["src"]
 }
