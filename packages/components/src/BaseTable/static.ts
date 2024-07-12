@@ -9,6 +9,7 @@ const DEFAULT_SEARCH_FORM = {
   searchText: "查询",
   resetText: "重置",
 };
+
 export enum VALUE_TYPE_ENUM {
   SELECT = "select",
   DATE = "date",
@@ -20,6 +21,7 @@ export enum VALUE_TYPE_ENUM {
   UPLOAD = "upload",
   MONEY = "money",
   DICT = "dict",
+  OPTION = "option",
 }
 
 export { DEFAULT_TOO_BAR, DEFAULT_SEARCH_FORM };

@@ -1,3 +1,11 @@
+/*
+ * @Author: HuangJX 17388766232@163.com
+ * @Date: 2024-07-03 11:38:50
+ * @LastEditors: HuangJX 17388766232@163.com
+ * @LastEditTime: 2024-07-12 16:16:39
+ * @FilePath: \nb-ui-pro\packages\components\src\BaseTable\index.tsx
+ * @Description: 表格组件
+ */
 import {
   FC,
   useEffect,

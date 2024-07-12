@@ -39,6 +39,7 @@ export type ValueType =
   | "upload"
   | "money"
   | "dict"
+  | "option"
   | ((text: any, record: any, index: number) => ReactNode);
 
 export interface IValueEnum {

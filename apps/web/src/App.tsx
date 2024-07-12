@@ -20,6 +20,23 @@ const App = () => {
       key: 'age',
       valueType: VALUE_TYPE_ENUM.MONEY,
     },
+    {
+      title: '操作',
+      valueType: VALUE_TYPE_ENUM.OPTION,
+      key: 'option',
+      dataIndex: 'option',
+      options: [
+        {
+          key: 'edit',
+        },
+        {
+          key: 'delete',
+        },
+        {
+          key: 'detail',
+        },
+      ],
+    },
   ];
 
   const data = [
